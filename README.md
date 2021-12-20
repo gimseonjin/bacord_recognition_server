@@ -1,7 +1,7 @@
 <div align="center">
     <br/>
     <h1>Bacord_Recognition_Server</h1>
-    <p>Server for udi barcode recognitiondeveloped by Carrykim in kumohdaseon Team.</p><br/>
+    <p>Server for udi barcode recognition developed by Carrykim in kumohdaseon Team.</p><br/>
     <img src="https://forthebadge.com/images/badges/built-with-love.svg">
     <img src="https://forthebadge.com/images/badges/fo-real.svg">
     <br/>
