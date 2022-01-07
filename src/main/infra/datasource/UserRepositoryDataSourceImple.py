@@ -1,4 +1,4 @@
-from src.domain.User import User
+from src.main.domain.User import User
 
 class UserRepositoryDataSourceImple:
     def __init__(self):

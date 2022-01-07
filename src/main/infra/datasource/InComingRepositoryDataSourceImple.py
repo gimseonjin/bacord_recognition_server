@@ -1,5 +1,5 @@
 from infra.IncomingRepository import IncomingRepository
-from src.domain.Incoming import Incoming
+from src.main.domain.Incoming import Incoming
 from datetime import datetime, timedelta
 
 
