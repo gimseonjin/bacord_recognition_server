@@ -1,5 +1,7 @@
 from _typeshed import Self
 from flask import request, json, Blueprint, jsonify, Response
+from src.domain.dto.LoginResultDto import LoginResultDto
+from src.domain.dto.SignUpResultDto import SignUpResultDto
 from src.service.UserService import UserService
 
 
@@ -16,9 +18,12 @@ class UserController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
 
-        result = self.userService.loginService(params)
+        loginResultDto = self.userService.loginService(params)
 
-        return Response(result.toJson, status=201, mimetype='application/json')
+        if not loginResultDto.result:
+            return Response(loginResultDto.toJson, status=400, mimetype='application/json')
+
+        return Response(loginResultDto.toJson, status=201, mimetype='application/json')
 
 
     @user_app.route('/signup', methods=['POST'])
@@ -28,7 +33,10 @@ class UserController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
         
-        result = self.userService.signUpService(params)
+        signUpResultDto = self.userService.signUpService(params)
 
-        return Response(result.toJson, status=201, mimetype='application/json')
+        if not signUpResultDto.result:
+            return Response(signUpResultDto.toJson, status=409, mimetype='application/json')
+
+        return Response(signUpResultDto.toJson, status=201, mimetype='application/json')
 
