@@ -1,8 +1,4 @@
 
-import json
-
-from flask.json import jsonify
-
 class Record():
     def __init__(self, di, date, itemName, userId, method):
         self.di = di

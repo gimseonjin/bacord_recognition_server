@@ -85,53 +85,7 @@ def post():
     return jsonify({"itemName" : item.name, "company" : item.company, "date_manufacture" : item.date_manufacture, "img" : item.img, "di" : di})
 
 
-@app.route('/login', methods=['POST'])
-def loginController():
-    params = json.loads(request.get_data())
-    result = False
-    msg = ""
-    print(params)
-    if len(params) == 0:
-        return 'No parameter'
-        msg = "no parameter"
 
-    user = userRepository.read(params["id"])
-
-    if((user == False) or (params["pwd"] != user.pwd) or (params["m_type"] != user.m_type)):
-        result = False
-        msg = "false"
-    else:
-        result = True
-        msg = "success"
-
-    return jsonify({"result": result, "msg": msg, "name" : user.name})
-
-
-@app.route('/signup', methods=['POST'])
-def singupController():
-    params = json.loads(request.get_data())
-    result = False
-    msg = ""
-
-    if len(params) == 0:
-        return 'No parameter'
-
-    print(userRepository.read(params["id"]))
-
-    if not userRepository.read(params["id"]):
-        userRepository.create(User(
-            params['id'], params['pwd'], params['name'], params['p_number'], params['m_type']))
-        result = True
-        msg = "success"
-        print(msg)
-
-    else:
-        print("test")
-        result = False
-        msg = "exit user"
-        print(msg)
-
-    return jsonify({"result": result, "msg": msg})
 
 @app.route('/income/<id>', methods = ['POST'])
 def incomeController(id):
