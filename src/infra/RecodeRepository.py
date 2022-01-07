@@ -1,90 +1,28 @@
-from flask import json
-from src.domain.Record import Record
-from datetime import datetime, timedelta
 
-class RecordRepository():
-    def __init__(self):
-        self.RecordList = []
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
-        self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=2)).strftime('%Y-%m-%d %H:%M:%S'),"허리바로", "kim", "입고"))
-        
+from abc import ABC, abstractmethod
 
+class RecordRepository(ABC):
+
+    @abstractmethod
     def create(self, Record):
-        self.RecordList.append(Record)
+        pass
 
+    @abstractmethod
     def read(self, di):
-        for obj in self.RecordList:
-            if obj.di == di:
-                return obj
+        pass
 
-        return False
-
+    @abstractmethod
     def readAll(self, userId):
-        readList = []
-        for obj in self.RecordList:
-            if obj.userId == userId:
-                readList.append(obj.toJSON())
+        pass
 
-        return readList
-
+    @abstractmethod
     def update(self, di, Record):
-        count = 0
-        for obj in self.RecordList:
-            if obj.di == di:
-                self.RecordList[count] = Record
-            count = count + 1
+        pass
 
+    @abstractmethod
     def delete(self, di):
-        count = 0
-        for obj in self.RecordList:
-            if obj.di == di:
-                del self.RecordList[count]
-            count = count + 1
+        pass
 
+    @abstractmethod
     def print(self):
-        for obj in self.RecordList:
-            print(obj, sep=' ')
+        pass
