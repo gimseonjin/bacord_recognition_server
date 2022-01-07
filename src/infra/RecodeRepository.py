@@ -1,5 +1,5 @@
 from flask import json
-from Record import Record
+from src.domain.Record import Record
 from datetime import datetime, timedelta
 
 class RecordRepository():

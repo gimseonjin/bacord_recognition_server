@@ -1,4 +1,4 @@
-from Item import Item
+from src.domain.Item import Item
 
 
 class ItemRepository():

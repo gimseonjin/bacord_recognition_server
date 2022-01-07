@@ -1,4 +1,4 @@
-from User import User
+from src.domain.User import User
 
 
 class UserRepository():

@@ -10,8 +10,8 @@ from UserRepository import UserRepository
 from ItemRepository import ItemRepository
 from IncomingRepository import IncomingRepository
 from RecodeRepository import RecordRepository
-from User import User
-from Incoming import Incoming
+from src.domain.User import User
+from src.domain.Incoming import Incoming
 import pyzbar.pyzbar as pyzbar
 import cv2
 from datetime import datetime
