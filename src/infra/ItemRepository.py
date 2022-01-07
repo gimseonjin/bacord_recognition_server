@@ -1,37 +1,22 @@
-from src.domain.Item import Item
+from abc import ABC, abstractmethod
 
-
-class ItemRepository():
-    def __init__(self):
-        self.itemList = []
-        self.itemList.append(Item("3DBT12-21D1001", "허리바로", "창대", "2021.10.21", '1.jpg'))
-        self.itemList.append(Item("21D1001", "ACL brace", "JDmedi", "2021.10.21", '2.jpg'))
-        
-
+class ItemRepository(ABC):
+    @abstractmethod
     def create(self, item):
-        self.itemList.append(item)
+        pass
 
+    @abstractmethod
     def read(self, id):
-        for obj in self.itemList:
-            if obj.id == id:
-                return obj
+        pass
 
-        return False
-
+    @abstractmethod
     def update(self, id, item):
-        count = 0
-        for obj in self.itemList:
-            if obj.id == id:
-                self.itemList[count] = item
-            count = count + 1
+        pass
 
+    @abstractmethod
     def delete(self, id):
-        count = 0
-        for obj in self.itemList:
-            if obj.id == id:
-                del self.itemList[count]
-            count = count + 1
+        pass
 
+    @abstractmethod
     def print(self):
-        for obj in self.itemList:
-            print(obj, sep=' ')
+        pass
