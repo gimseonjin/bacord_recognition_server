@@ -1,44 +1,28 @@
-from src.domain.Incoming import Incoming
-from datetime import datetime, timedelta
+from abc import ABC, abstractmethod
 
 
-class IncomingRepository():
-    def __init__(self):
-        self.incomingList = []
-        self.incomingList.append(Incoming("08800140600090","kim",(datetime.now()- timedelta(days=2)),(datetime.now()- timedelta(days=1)) ))
-        
+class IncomingRepository(ABC):
 
+    @abstractmethod
     def create(self, incoming):
-        self.incomingList.append(incoming)
+        pass
 
+    @abstractmethod
     def read(self, di):
-        for obj in reversed(self.incomingList):
-            if obj.di == di:
-                return obj
-
-        return False
+        pass
         
+    @abstractmethod
     def readAll(self, di):
-        readList = []
-        for obj in self.incomingList:
-            if obj.di == di:
-                readList.append(obj.toJSON())
+        pass
 
-        return readList
-
+    @abstractmethod
     def update(self, di, incoming):
-        count = len(self.incomingList)
-        print(count)
-        for obj in reversed(self.incomingList):
-            print(obj)
+        pass
 
+    @abstractmethod
     def delete(self, di):
-        count = 0
-        for obj in self.incomingList:
-            if obj.di == di:
-                del self.incomingList[count]
-            count = count + 1
+        pass
 
+    @abstractmethod
     def print(self):
-        for obj in self.incomingList:
-            print(obj, sep=' ')
+        pass
