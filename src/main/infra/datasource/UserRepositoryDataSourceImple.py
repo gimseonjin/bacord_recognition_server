@@ -1,6 +1,7 @@
+from src.main.infra.UserRepository import UserRepository
 from src.main.domain.User import User
 
-class UserRepositoryDataSourceImple:
+class UserRepositoryDataSourceImple(UserRepository):
     def __init__(self):
         self.userList = []
         self.userList.append(User("kim", "pwd", "seonjin", "01088352870", 0))

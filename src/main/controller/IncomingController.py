@@ -21,7 +21,7 @@ class IncomingController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
 
-        incomeResultDto:IncomeResultDto = self.incomingService.incomeService(params)
+        incomeResultDto:IncomeResultDto = self.incomingService.incomeService(id,params)
 
         if not incomeResultDto.result:
             return Response(incomeResultDto.toJson, status=400, mimetype='application/json')
