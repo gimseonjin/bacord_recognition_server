@@ -1,5 +1,7 @@
 from flask import request, json, Blueprint, jsonify, Response
 from main.domain.dto.IncomeResultDto import IncomeResultDto
+from main.domain.dto.OutcomeResultDto import OutcomeResultDto
+from main.domain.dto.IncomesResultDto import IncomesResultDto
 from src.main.service.IncomingService import IncomingService
 
 
@@ -19,7 +21,7 @@ class IncomingController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
 
-        incomeResultDto = self.incomingService.incomeService(params)
+        incomeResultDto:IncomeResultDto = self.incomingService.incomeService(params)
 
         if not incomeResultDto.result:
             return Response(incomeResultDto.toJson, status=400, mimetype='application/json')
@@ -28,7 +30,7 @@ class IncomingController():
         
     @incoming_app.route('/outcome/<id>', methods = ['GET'])
     def outcomeController(self,id):
-        outcomeResultDto = self.incomingService.outcomeService(id)
+        outcomeResultDto:OutcomeResultDto = self.incomingService.outcomeService(id)
 
         if not outcomeResultDto.result:
             return Response(outcomeResultDto.toJson, status=400, mimetype='application/json')
@@ -37,7 +39,7 @@ class IncomingController():
     
     @incoming_app.route('/incomes/<id>', methods = ['GET'])
     def imcomesController(self,id):
-        incomesResultDto = self.incomingService.incomesService(id)
+        incomesResultDto:IncomesResultDto = self.incomingService.incomesService(id)
         return Response(incomesResultDto.toJson, status=200, mimetype='application/json')
 
 

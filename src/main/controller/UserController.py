@@ -1,4 +1,6 @@
 from flask import request, json, Blueprint, jsonify, Response
+from src.main.domain.dto.LoginResultDto import LoginResultDto
+from src.main.domain.dto.SignUpResultDto import SignUpResultDto
 from src.main.service.UserService import UserService
 
 
@@ -18,7 +20,7 @@ class UserController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
 
-        loginResultDto = self.userService.loginService(params)
+        loginResultDto:LoginResultDto = self.userService.loginService(params)
 
         if not loginResultDto.result:
             return Response(loginResultDto.toJson, status=400, mimetype='application/json')
@@ -33,7 +35,7 @@ class UserController():
         if self.checkParameter(params):
             return jsonify({"result": False, "msg": "Wrong Params"})
         
-        signUpResultDto = self.userService.signUpService(params)
+        signUpResultDto:SignUpResultDto = self.userService.signUpService(params)
 
         if not signUpResultDto.result:
             return Response(signUpResultDto.toJson, status=409, mimetype='application/json')
