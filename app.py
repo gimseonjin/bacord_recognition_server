@@ -85,38 +85,10 @@ def post():
     return jsonify({"itemName" : item.name, "company" : item.company, "date_manufacture" : item.date_manufacture, "img" : item.img, "di" : di})
 
 
-
-
-@app.route('/income/<id>', methods = ['POST'])
-def incomeController(id):
-    params = json.loads(request.get_data())
-
-    incomingRepository.create(Incoming(id,params["userId"],datetime.now(),"-"))
-
-    msg = "success"
-    return jsonify({"msg" : msg})
-
-
-@app.route('/outcome/<id>', methods = ['GET'])
-def outcomeController(id):
-    incoming = incomingRepository.read(id)
-
-    print(incoming)
-    incoming.setOutcome(datetime.now())
-    print(incoming)
-    incomingRepository.update(id, incoming)
-
-    msg = "success"
-    return jsonify({"msg" : msg})
-
 @app.route('/record/<userId>', methods = ['GET'])
 def recordController(userId):
     return jsonify({"result" : recordRepository.readAll(userId)})
 
-
-@app.route('/incomes/<id>', methods = ['GET'])
-def imcomesController(id):
-    return jsonify({"result" : incomingRepository.readAll(id)})
 
 @app.route('/img/<id>', methods=['GET'])
 def imgController(id):

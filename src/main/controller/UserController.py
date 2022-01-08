@@ -1,7 +1,4 @@
-from _typeshed import Self
 from flask import request, json, Blueprint, jsonify, Response
-from src.main.domain.dto.LoginResultDto import LoginResultDto
-from src.main.domain.dto.SignUpResultDto import SignUpResultDto
 from src.main.service.UserService import UserService
 
 
@@ -11,6 +8,9 @@ class UserController():
     def __init__(self, userService : UserService):
         self.userService = userService
     
+    def checkParameter(params):
+        return len(params) == 0
+
     @user_app.route('/login', methods=['POST'])
     def login(self):
         params = json.loads(request.get_data())

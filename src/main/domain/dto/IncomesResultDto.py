@@ -1,0 +1,2 @@
+class IncomesResultDto:
+    pass
