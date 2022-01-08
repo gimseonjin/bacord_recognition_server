@@ -10,8 +10,8 @@ from UserRepository import UserRepository
 from ItemRepository import ItemRepository
 from IncomingRepository import IncomingRepository
 from RecodeRepository import RecordRepository
-from User import User
-from Incoming import Incoming
+from src.domain.User import User
+from src.domain.Incoming import Incoming
 import pyzbar.pyzbar as pyzbar
 import cv2
 from datetime import datetime
@@ -85,84 +85,10 @@ def post():
     return jsonify({"itemName" : item.name, "company" : item.company, "date_manufacture" : item.date_manufacture, "img" : item.img, "di" : di})
 
 
-@app.route('/login', methods=['POST'])
-def loginController():
-    params = json.loads(request.get_data())
-    result = False
-    msg = ""
-    print(params)
-    if len(params) == 0:
-        return 'No parameter'
-        msg = "no parameter"
-
-    user = userRepository.read(params["id"])
-
-    if((user == False) or (params["pwd"] != user.pwd) or (params["m_type"] != user.m_type)):
-        result = False
-        msg = "false"
-    else:
-        result = True
-        msg = "success"
-
-    return jsonify({"result": result, "msg": msg, "name" : user.name})
-
-
-@app.route('/signup', methods=['POST'])
-def singupController():
-    params = json.loads(request.get_data())
-    result = False
-    msg = ""
-
-    if len(params) == 0:
-        return 'No parameter'
-
-    print(userRepository.read(params["id"]))
-
-    if not userRepository.read(params["id"]):
-        userRepository.create(User(
-            params['id'], params['pwd'], params['name'], params['p_number'], params['m_type']))
-        result = True
-        msg = "success"
-        print(msg)
-
-    else:
-        print("test")
-        result = False
-        msg = "exit user"
-        print(msg)
-
-    return jsonify({"result": result, "msg": msg})
-
-@app.route('/income/<id>', methods = ['POST'])
-def incomeController(id):
-    params = json.loads(request.get_data())
-
-    incomingRepository.create(Incoming(id,params["userId"],datetime.now(),"-"))
-
-    msg = "success"
-    return jsonify({"msg" : msg})
-
-
-@app.route('/outcome/<id>', methods = ['GET'])
-def outcomeController(id):
-    incoming = incomingRepository.read(id)
-
-    print(incoming)
-    incoming.setOutcome(datetime.now())
-    print(incoming)
-    incomingRepository.update(id, incoming)
-
-    msg = "success"
-    return jsonify({"msg" : msg})
-
 @app.route('/record/<userId>', methods = ['GET'])
 def recordController(userId):
     return jsonify({"result" : recordRepository.readAll(userId)})
 
-
-@app.route('/incomes/<id>', methods = ['GET'])
-def imcomesController(id):
-    return jsonify({"result" : incomingRepository.readAll(id)})
 
 @app.route('/img/<id>', methods=['GET'])
 def imgController(id):

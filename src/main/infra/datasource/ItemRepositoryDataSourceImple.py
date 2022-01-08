@@ -1,7 +1,6 @@
-from Item import Item
+from src.main.domain.Item import Item
 
-
-class ItemRepository():
+class ItemRepositoryDataSourceImple():
     def __init__(self):
         self.itemList = []
         self.itemList.append(Item("3DBT12-21D1001", "허리바로", "창대", "2021.10.21", '1.jpg'))

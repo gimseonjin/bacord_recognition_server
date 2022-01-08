@@ -1,8 +1,7 @@
-from flask import json
-from Record import Record
+from src.main.domain.Record import Record
 from datetime import datetime, timedelta
 
-class RecordRepository():
+class RecordRepositoryDataSourceImple:
     def __init__(self):
         self.RecordList = []
         self.RecordList.append(Record("08800140600090", (datetime.now()- timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S'), "허리바로", "kim", "출고"))
