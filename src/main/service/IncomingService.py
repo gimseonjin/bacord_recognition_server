@@ -27,4 +27,4 @@ class IncomingService:
     def incomesService(self, id):
         incomings = self.incomingRepository.readAll(id)
 
-        return IncomesResultDto(True, "update outcoming success", incomings)
+        return IncomesResultDto(True, "Getting Incomes List!", incomings)

@@ -29,7 +29,7 @@ class IncomingController():
         return Response(incomeResultDto.toJson, status=200, mimetype='application/json')
         
     @incoming_app.route('/outcome/<id>', methods = ['GET'])
-    def outcomeController(self,id):
+    def outcome(self,id):
         outcomeResultDto:OutcomeResultDto = self.incomingService.outcomeService(id)
 
         if not outcomeResultDto.result:
@@ -38,7 +38,7 @@ class IncomingController():
         return Response(outcomeResultDto.toJson, status=200, mimetype='application/json')
     
     @incoming_app.route('/incomes/<id>', methods = ['GET'])
-    def imcomesController(self,id):
+    def imcomes(self,id):
         incomesResultDto:IncomesResultDto = self.incomingService.incomesService(id)
         return Response(incomesResultDto.toJson, status=200, mimetype='application/json')
 
