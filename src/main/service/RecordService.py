@@ -10,4 +10,4 @@ class RecordService:
     def recordService(self, id):
         records = self.recordRepository.readAll(id)
 
-        return RecordResultDto(True, "Getting Incomes List!", records)
+        return RecordResultDto(True, "Getting Record List!", records)

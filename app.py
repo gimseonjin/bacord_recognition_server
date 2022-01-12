@@ -85,11 +85,6 @@ def post():
     return jsonify({"itemName" : item.name, "company" : item.company, "date_manufacture" : item.date_manufacture, "img" : item.img, "di" : di})
 
 
-@app.route('/record/<userId>', methods = ['GET'])
-def recordController(userId):
-    return jsonify({"result" : recordRepository.readAll(userId)})
-
-
 @app.route('/img/<id>', methods=['GET'])
 def imgController(id):
     return send_file('img/'+id)
