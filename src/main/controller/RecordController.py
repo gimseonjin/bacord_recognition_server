@@ -10,7 +10,7 @@ class RecordController():
         self.recordService = recordService
     
     @record_app.route('/record/<userId>', methods = ['GET'])
-    def recordController(self,userId):
+    def record(self,userId):
 
         recordResultDto = self.recordService.recordService(userId)
 

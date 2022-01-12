@@ -29,7 +29,7 @@ class UserController():
 
 
     @user_app.route('/signup', methods=['POST'])
-    def signpu(self):
+    def signUp(self):
         params = json.loads(request.get_data())
 
         if self.checkParameter(params):
