@@ -1,18 +1,13 @@
-from flask import request, json, Blueprint, jsonify, Response
-from main.domain.dto.RecordResultDto import RecordResultDto
-from src.main.service.RecordService import RecordService
+from flask import Blueprint, Response, json
+from src.main.Config import Config
 
+c = Config()
+recordService = c.getRecordService()
 
-class RecordController():
-    record_app = Blueprint('record_app', __name__, url_prefix='/')
+record_app = Blueprint('record_app', __name__, url_prefix='/')
 
-    def __init__(self, recordService : RecordService):
-        self.recordService = recordService
+@record_app.route('/record/<userId>', methods = ['GET'])
+def record(userId):
+    recordResultDto = recordService.recordService(userId)
+    return Response(json.dumps(recordResultDto.toJSON()), status=200, mimetype='application/json')
     
-    @record_app.route('/record/<userId>', methods = ['GET'])
-    def record(self,userId):
-
-        recordResultDto = self.recordService.recordService(userId)
-
-        return Response(recordResultDto.toJson, status=200, mimetype='application/json')
-        
