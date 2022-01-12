@@ -13,7 +13,7 @@ incomingService = IncomingService(incomingRepository)
 def add_test_income():
     incomingRepository.create(Incoming("id","userid",datetime.now(),"-"))
 
-def test_succes_read_incomes():
+def test_succes_read_incomes(add_test_income):
     # given
     id = "id"
     incomings = incomingRepository.readAll(id)
