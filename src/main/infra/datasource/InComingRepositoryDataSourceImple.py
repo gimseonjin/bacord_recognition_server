@@ -1,13 +1,13 @@
-from Incoming import Incoming
+from src.main.infra.IncomingRepository import IncomingRepository
+from src.main.domain.Incoming import Incoming
 from datetime import datetime, timedelta
 
 
-class IncomingRepository():
+class IncomingRepositoryDataSourceImple(IncomingRepository):
     def __init__(self):
         self.incomingList = []
         self.incomingList.append(Incoming("08800140600090","kim",(datetime.now()- timedelta(days=2)),(datetime.now()- timedelta(days=1)) ))
         
-
     def create(self, incoming):
         self.incomingList.append(incoming)
 

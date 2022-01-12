@@ -19,10 +19,11 @@ Based on <a href="">Flask</a> with Python Language
 
 #### Requirement
 ```
-JAVA JDK : 3.9.0 
+Python : 3.9.0 
 Flask : 2.0.1
-opencv-python : 4.5.3.56
-pyzbar : 0.1.8
+Opencv-python : 4.5.3.56
+Pyzbar : 0.1.8
+Docker : 20.10.10
 ```
 
 #### Build Setup
