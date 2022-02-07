@@ -16,6 +16,7 @@ CORS(app)
 
 c = Config()
 
+# incoming -> 입출고 관련 컨트롤러를 연결하는 함수입니다.
 app.register_blueprint(IncomingController.incoming_app)
 app.register_blueprint(ItemController.item_app)
 app.register_blueprint(ReconrdController.record_app)
