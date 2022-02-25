@@ -1,8 +1,8 @@
 
-from src.main.service.ItemService import ItemService
-from src.main.infra.datasource.ItemRepositoryDataSourceImple import ItemRepositoryDataSourceImple
-from src.main.domain.dto.ItemResultDto import ItemResultDto
-from src.main.domain.Item import Item
+from main.item.service.ItemService import ItemService
+from main.item.infra.ItemRepositoryDataSourceImple import ItemRepositoryDataSourceImple
+from main.item.model.dto.ItemResultDto import ItemResultDto
+from main.item.model.Item import Item
 from datetime import datetime
 from werkzeug.utils import secure_filename
 import numpy as np

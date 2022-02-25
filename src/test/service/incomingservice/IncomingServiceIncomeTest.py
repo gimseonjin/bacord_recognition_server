@@ -1,4 +1,4 @@
-from src.main.service.IncomingService import IncomingService
+from main.incoming.service.IncomingService import IncomingService
 from src.main.infra.datasource.IncomingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
 from src.main.domain.dto.IncomeResultDto import IncomeResultDto
 

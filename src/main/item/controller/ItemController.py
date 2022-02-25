@@ -1,6 +1,6 @@
 from flask import request, Blueprint, Response, send_file, render_template, json
 from werkzeug.utils import secure_filename
-from src.main.domain.dto.ItemResultDto import ItemResultDto
+from main.item.model.dto.ItemResultDto import ItemResultDto
 from src.main.Config import Config
 
 

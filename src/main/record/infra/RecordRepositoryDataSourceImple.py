@@ -1,4 +1,4 @@
-from src.main.domain.Record import Record
+from main.record.model.Record import Record
 from datetime import datetime, timedelta
 
 class RecordRepositoryDataSourceImple:

@@ -1,7 +1,7 @@
-from src.main.domain.User import User
-from src.main.service.UserService import UserService
-from src.main.infra.datasource.UserRepositoryDataSourceImple import UserRepositoryDataSourceImple
-from src.main.domain.dto.LoginResultDto import LoginResultDto
+from main.user.model.User import User
+from main.user.service.UserService import UserService
+from main.user.infra.UserRepositoryDataSourceImple import UserRepositoryDataSourceImple
+from main.user.model.LoginResultDto import LoginResultDto
 import pytest
 
 userRepository = UserRepositoryDataSourceImple()

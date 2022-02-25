@@ -1,8 +1,8 @@
 from src.main.domain.dto.IncomeResultDto import IncomeResultDto
-from src.main.domain.dto.OutcomeResultDto import OutcomeResultDto
+from main.incoming.model.dto.OutcomeResultDto import OutcomeResultDto
 from src.main.domain.dto.IncomesResultDto import IncomesResultDto
-from src.main.infra.IncomingRepository import IncomingRepository
-from src.main.domain.Incoming import Incoming
+from main.incoming.infra.IncomingRepository import IncomingRepository
+from main.incoming.model.Incoming import Incoming
 from datetime import datetime
 
 class IncomingService:

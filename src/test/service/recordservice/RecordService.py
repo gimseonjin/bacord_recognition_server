@@ -1,9 +1,9 @@
 
-from src.main.service.RecordService import RecordService
-from src.main.infra.datasource.RecordRepositoryDataSourceImple import RecordRepositoryDataSourceImple
-from src.main.domain.dto.RecordResultDto import RecordResultDto
+from main.record.service.RecordService import RecordService
+from main.record.infra.RecordRepositoryDataSourceImple import RecordRepositoryDataSourceImple
+from main.record.model.dto.RecordResultDto import RecordResultDto
 from datetime import datetime, timedelta
-from src.main.domain.Record import Record
+from main.record.model.Record import Record
 import pytest
 
 recordRepository = RecordRepositoryDataSourceImple()

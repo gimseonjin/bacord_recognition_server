@@ -1,11 +1,11 @@
 from src.main.infra.datasource.IncomingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
-from src.main.infra.datasource.ItemRepositoryDataSourceImple import ItemRepositoryDataSourceImple
-from src.main.infra.datasource.UserRepositoryDataSourceImple import UserRepositoryDataSourceImple
-from src.main.infra.datasource.RecordRepositoryDataSourceImple import RecordRepositoryDataSourceImple
-from src.main.service.IncomingService import IncomingService
-from src.main.service.ItemService import ItemService
-from src.main.service.UserService import UserService
-from src.main.service.RecordService import RecordService
+from main.item.infra.ItemRepositoryDataSourceImple import ItemRepositoryDataSourceImple
+from main.user.infra.UserRepositoryDataSourceImple import UserRepositoryDataSourceImple
+from main.record.infra.RecordRepositoryDataSourceImple import RecordRepositoryDataSourceImple
+from main.incoming.service.IncomingService import IncomingService
+from main.item.service.ItemService import ItemService
+from main.user.service.UserService import UserService
+from main.record.service.RecordService import RecordService
 
 
 

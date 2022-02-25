@@ -19,7 +19,7 @@ fixme : 여기서 예외처리 부분을 임의로 만들었습니다. 이 부�
 
 from flask import request, json, Blueprint, jsonify, Response
 from src.main.domain.dto.IncomeResultDto import IncomeResultDto
-from src.main.domain.dto.OutcomeResultDto import OutcomeResultDto
+from main.incoming.model.dto.OutcomeResultDto import OutcomeResultDto
 from src.main.domain.dto.IncomesResultDto import IncomesResultDto
 from src.main.Config import Config
 
