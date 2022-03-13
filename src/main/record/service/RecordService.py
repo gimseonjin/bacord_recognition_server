@@ -1,6 +1,6 @@
-from main.record.model.dto.RecordResultDto import RecordResultDto
-from main.record.infra.RecodeRepository import RecordRepository
-from main.record.model.Record import Record
+from src.main.record.model.dto.RecordResultDto import RecordResultDto
+from src.main.record.infra.RecodeRepository import RecordRepository
+from src.main.record.model.Record import Record
 from datetime import datetime
 
 class RecordService:

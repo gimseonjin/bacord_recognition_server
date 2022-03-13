@@ -1,6 +1,6 @@
-from main.incoming.service.IncomingService import IncomingService
-from src.main.infra.datasource.IncomingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
-from src.main.domain.dto.IncomeResultDto import IncomeResultDto
+from src.main.incoming.service.IncomingService import IncomingService
+from src.main.incoming.infra.InComingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
+from src.main.incoming.model.dto.IncomeResultDto import IncomeResultDto
 
 incomingRepository = IncomingRepositoryDataSourceImple()
 incomingService = IncomingService(incomingRepository)

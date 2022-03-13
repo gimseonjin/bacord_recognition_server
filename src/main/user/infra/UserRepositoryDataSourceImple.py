@@ -1,5 +1,5 @@
-from main.user.infra.UserRepository import UserRepository
-from main.user.model.User import User
+from src.main.user.infra.UserRepository import UserRepository
+from src.main.user.model.User import User
 
 class UserRepositoryDataSourceImple(UserRepository):
     def __init__(self):

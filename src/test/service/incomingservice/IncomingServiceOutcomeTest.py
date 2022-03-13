@@ -1,8 +1,8 @@
 from datetime import datetime
-from main.incoming.model.Incoming import Incoming
-from main.incoming.service.IncomingService import IncomingService
-from src.main.infra.datasource.IncomingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
-from main.incoming.model.dto.OutcomeResultDto import OutcomeResultDto
+from src.main.incoming.model.Incoming import Incoming
+from src.main.incoming.service.IncomingService import IncomingService
+from src.main.incoming.infra.InComingRepositoryDataSourceImple import IncomingRepositoryDataSourceImple
+from src.main.incoming.model.dto.OutcomeResultDto import OutcomeResultDto
 import pytest
 
 incomingRepository = IncomingRepositoryDataSourceImple()

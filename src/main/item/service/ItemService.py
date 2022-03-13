@@ -1,10 +1,5 @@
-from main.item.model.dto.ItemResultDto import ItemResultDto
-from src.main.domain.dto.IncomeResultDto import IncomeResultDto
-from main.incoming.model.dto.OutcomeResultDto import OutcomeResultDto
-from src.main.domain.dto.IncomesResultDto import IncomesResultDto
-from main.item.infra.ItemRepository import ItemRepository
-from main.incoming.model.Incoming import Incoming
-from datetime import datetime
+from src.main.item.model.dto.ItemResultDto import ItemResultDto
+from src.main.item.infra.ItemRepository import ItemRepository
 from werkzeug.utils import secure_filename
 import pyzbar.pyzbar as pyzbar
 import cv2

@@ -1,5 +1,5 @@
-from main.incoming.infra.IncomingRepository import IncomingRepository
-from main.incoming.model.Incoming import Incoming
+from src.main.incoming.infra.IncomingRepository import IncomingRepository
+from src.main.incoming.model.Incoming import Incoming
 from datetime import datetime, timedelta
 
 

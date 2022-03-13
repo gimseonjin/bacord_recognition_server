@@ -1,6 +1,6 @@
 from flask import request, json, Blueprint, jsonify, Response
-from main.user.model.LoginResultDto import LoginResultDto
-from main.user.model.SignUpResultDto import SignUpResultDto
+from src.main.user.model.LoginResultDto import LoginResultDto
+from src.main.user.model.SignUpResultDto import SignUpResultDto
 from src.main.Config import Config
 
 c = Config()

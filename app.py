@@ -5,10 +5,10 @@
 
 from flask import Flask
 from flask_cors import CORS
-import main.incoming.controller.IncomingController as IncomingController
-import main.item.controller.ItemController as ItemController
-import main.record.controller.RecordController as ReconrdController
-import main.user.controller.UserController as UserController
+import src.main.incoming.controller.IncomingController as IncomingController
+import src.main.item.controller.ItemController as ItemController
+import src.main.record.controller.RecordController as ReconrdController
+import src.main.user.controller.UserController as UserController
 from src.main.Config import Config
 
 app = Flask(__name__)

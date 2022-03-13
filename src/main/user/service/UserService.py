@@ -1,7 +1,7 @@
-from main.user.model.LoginResultDto import LoginResultDto
-from main.user.model.SignUpResultDto import SignUpResultDto
-from main.user.infra.UserRepository import UserRepository
-from main.user.model.User import User
+from src.main.user.model.LoginResultDto import LoginResultDto
+from src.main.user.model.SignUpResultDto import SignUpResultDto
+from src.main.user.infra.UserRepository import UserRepository
+from src.main.user.model.User import User
 
 class UserService:
     def __init__(self, userRepository: UserRepository):
